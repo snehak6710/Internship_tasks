@@ -1,239 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Portfolio</title>
+<meta charset="UTF-8">
+<title>My Portfolio</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Bookman Old Style;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Garamond";
+}
 
-        body {
-            background-color: #f2f2f2;
-        }
+body{
+    background:#f2f2f2;
+    color:#333;
+    line-height:1.8;
+    font-size:17px;
+}
 
-        .container {
-            display: flex;
-            max-width: 1100px;
-            margin: 30px auto;
-            background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }
+.section{
+    padding:60px 10%;
+    background:#fff;
+}
 
+.section h2{
+    text-align:center;
+    color:#b76b5b;
+    margin-bottom:40px;
+    letter-spacing:2px;
+    font-size:28px;
+}
 
-        .left {
-            width: 35%;
-            background-color: #b76b5b;
-            color: white;
-            padding: 30px;
-        }
+.hero{
+    background:#b76b5b;
+    color:#fff;
+    padding:50px 10%;
+    text-align:center;
+}
 
-        .left img {
-            width: 100%;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
+.hero h1{
+    font-size:42px;
+}
 
-        .left h1 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
+.hero p{
+    font-size:20px;
+    margin-top:10px;
+}
 
-        .left h3 {
-            margin-top: 30px;
-            margin-bottom: 10px;
-            border-bottom: 1px solid white;
-            padding-bottom: 5px;
-            letter-spacing: 1px;
-        }
+.about p,
+.certifications ul{
+    max-width:800px;
+    margin:auto;
+    text-align: center;
+}
 
-        .left p {
-            margin: 8px 0;
-            font-size: 14px;
-        }
+.education-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:20px;
+    max-width:1000px;
+    margin:auto;
+}
 
-        .interests {
-            list-style: none;
-        }
+.education-card{
+    border:2px solid #b76b5b;
+    padding:20px;
+    text-align:center;
+    border-radius:6px;
+}
 
-        .interests li {
-            margin: 6px 0;
-            font-size: 14px;
-        }
+.skills-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 25px;
+    max-width: 900px;
+    margin: auto;
+    justify-items: center;
+}
 
+.skill{
+    border: 2px solid #b76b5b;
+    width: 150px;
+    height: 80px;
 
-        .right {
-            width: 65%;
-            padding: 40px;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    text-align: center;
+    font-weight: bold;
+}
 
-        .right section {
-            margin-bottom: 40px;
-        }
+.strengths ul{
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
 
-        .right h2 {
-            color: #b76b5b;
-            margin-bottom: 15px;
-            letter-spacing: 2px;
-        }
+.strengths{
+    font-size: 18px;
+    margin: 10px 0;
+}
 
-        .right p {
-            font-size: 15px;
-            color: #444;
-            line-height: 1.6;
-        }
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
 
+.project-card{
+    background:#fff;
+    padding:25px;
+    border-radius:6px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
 
-        .education {
-            display: flex;
-            justify-content: space-between;
-        }
+.project-card h3{
+    color:#b76b5b;
+    margin-bottom:10px;
+}
 
-        .edu-box {
-            width: 45%;
-        }
+.project-card span{
+    font-size:14px;
+    color:#777;
+}
 
-        .edu-box h4 {
-            font-size: 16px;
-            color: #333;
-        }
+.certifications ul{
+    list-style: none;
+    padding-left: 0;
+    text-align: center;
+}
 
-        .edu-box span {
-            font-weight: bold;
-            color: #b76b5b;
-        }
+.contact{
+    background:#333;
+    color:#fff;
+    text-align:center;
+}
 
-        
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+.contact p{
+    margin:10px 0;
+}
 
-        .skill-circle {
-            width: 90px;
-            height: 90px;
-            border: 5px solid #b76b5b;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            color: #333;
-        }
+.contact a{
+    color:#fff;
+    text-decoration:underline;
+}
 
-        
-        .project h4 {
-            color: #333;
-            margin-bottom: 5px;
-        }
+footer{
+    background:#222;
+    color:#aaa;
+    text-align:center;
+    padding:15px;
+}
 
-        .project span {
-            font-size: 13px;
-            color: #b76b5b;
-            display:block;
-            margin-bottom: 20px;
-        }
+@media(max-width:768px){
+    .education-grid{
+        grid-template-columns:1fr 1fr;
+    }
 
-        .project p {
-            margin-top: 10px;
-        }
-
-        @media (max-width: 900px) {
-            .container {
-                flex-direction: column;
-            }
-
-            .left,
-            .right {
-                width: 100%;
-            }
-        }
-    </style>
+    .hero h1{
+        font-size:34px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-<div class="container">
+<section class="hero">
+    <h1>Sneha Koli</h1>
+    <p>MCA Student | Computer Science</p>
+</section>
 
-    <div class="left">
-        <img src="profile.jpg" alt="Profile Photo">
+<section class="section about">
+    <h2>About Me</h2>
+    <p>
+        Hello! I am <strong>Sneha Koli</strong>, a student who is passionate about learning web development. 
+        I enjoy creating clean, user-friendly websites and continuously improving my skills through hands-on projects. I am eager to learn new technologies and turn ideas into meaningful digital experiences.
+    </p>
+</section>
 
-        <h1>Sneha Koli</h1>
+<section class="section">
+    <h2>Education</h2>
 
-        <h3>CONTACT</h3>
-        <p>📞 +91 XXXXXXXXXX</p>
-        <p>✉️ sk@gmail.com</p>
-        <p>📍  Maharashtra, India</p>
+    <div class="education-grid">
+        <div class="education-card">
+            <strong>10th SSC</strong>
+            <p>Dr. S. R. Patil Highschool, Jambhali</p>
+            <p>(2018-2019)</p>
+        </div>
 
-        <h3>INTERESTS</h3>
-        <ul class="interests">
-            <li>✈️ Travel</li>
-            <li>🎧 Music</li>
-            <li>🎨 Arts & Crafts</li>
-            <li>✏️ Drawing</li>
-        </ul>
+        <div class="education-card">
+            <strong>12th HSC</strong>
+            <p>Jaysingpur College, Jaysingpur</p>
+            <p>(2019-2021)</p>
+        </div>
+
+        <div class="education-card">
+            <strong>BCA</strong>
+            <p>Jaysingpur College, Jaysingpur</p>
+            <p>(2021–2024)</p>
+        </div>
+
+        <div class="education-card">
+            <strong>MCA</strong>
+            <p>Dr. J. J. Magdum College of Engineering, Jaysingpur</p>
+            <p>(2024–2026)</p>
+        </div>
     </div>
+</section>
 
-    <div class="right">
-
-        <section>
-            <h2>ABOUT ME</h2>
-            <p>
-                Hello! I am <strong>Sneha Koli</strong>, a student who is passionate about learning
-                web development. I enjoy creating clean, simple, and user‑friendly websites
-                while continuously improving my technical skills.
-            </p>
-        </section>
-
-        <section>
-            <h2>EDUCATION</h2>
-            <div class="education">
-                <div class="edu-box">
-                    <h4>Bachelor of Computer Application</h4>
-                    <p>XYZ College</p>
-                    <p>(2021-2024)</p>
-                </div>
-
-                <div class="edu-box">
-                    <h4>Master of Computer Application</h4>
-                    <p>ABC College</p>
-                    <p>(2024-2026)</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>SKILLS</h2>
-            <div class="skills">
-                <div class="skill-circle">HTML</div>
-                <div class="skill-circle">CSS</div>
-                <div class="skill-circle">JavaScript</div>
-                <div class="skill-circle">Python</div>
-                <div class="skill-circle">PHP(Basic)</div>
-                <div class="skill-circle">MySQL(Basic)</div>
-            </div>
-        </section>
-
-        <section>
-            <h2>PROJECTS</h2>
-            <div class="project">
-                <h4>Pharmacy Management System</h4>
-                <span>A Web-based pharmacy system featuring an online medical store and also admin panel, inventory, billing, reports, etc.</span>
-                
-                <h4>Matrimony Website</h4>
-                <span>A user-friendly matrimony website with profile listings, basic search features, and responsive design for easy access on all devices and also admin panel.</span>
-               
-                <h4>Tours & Travels Website</h4>
-                <span>A responsive travel website that showcases tour packages, destinations, booking details, and contact information.</span>
-                
-                <h4>Responsive Web Pages using HTML, CSS & JavaScript</h4>
-                <span>Designed multiple responsive web pages using HTML, CSS & Javascript, focusing on layout, styling, and mobile-friendly user experience.</span>
-            </div>
-        </section>
-
+<section class="section">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Python</div>
+        <div class="skill">PHP (Basic)</div>
+        <div class="skill">MySQL (Basic)</div>
     </div>
-</div>
+</section>
+
+<section class="section">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+        <div class="project-card">
+            <h3>Pharmacy Management System</h3>
+            <p>Online Medical Store and admin panel with inventory, billing and reporting features.</p>
+            <span>HTML • CSS • JavaScript • PHP • MySQL</span>
+        </div>
+
+        <div class="project-card">
+            <h3>Matrimony Website</h3>
+            <p>Matrimony website with profiles, search and admin panel.</p>
+            <span>HTML • CSS • JavaScript • React.js • Node.js • Firebase</span>
+        </div>
+
+        <div class="project-card">
+            <h3>Tours & Travels Booking Platform</h3>
+            <p>Tour packages, destinations, pricing and booking details.</p>
+            <span>HTML • CSS • JavaScript • PHP • MySQL</span>
+        </div>
+
+        <div class="project-card">
+            <h3>Responsive Web Pages</h3>
+            <p> Multiple responsive demo web pages created using HTML, CSS, and JavaScript focusing on layouts.</p>
+            <span>HTML • CSS • JavaScript</span>
+        </div>
+    </div>
+</section>
+
+<section class="section certifications">
+    <h2>Certifications</h2>
+    <ul>
+         <li>C & C++ - MKCL</li>
+         <li>Python for Data Science</li>
+        <li>Web Development Basics</li>
+        <li>Python Programming</li>
+    </ul>
+</section>
+
+<section class="section strengths">
+    <h2>Strengths</h2>
+    <ul>
+        <li>Quick Learner</li>
+        <li>Problem Solving</li>
+        <li>Team Work</li>
+        <li>Time Management</li>
+    </ul>
+</section>
+
+<section class="section contact">
+    <h2>Contact</h2>
+    <p>📞 +91 XXXXXXXXXX</p>
+    <p>✉️ sk@gmail.com</p>
+    <p>
+        🔗 <a href="https://www.linkedin.com/in/snehakoli20" target="_blank">
+        LinkedIn Profile</a>
+    </p>
+    <p>📍 Jaysingpur, Kolhapur District, Maharashtra – 416101, India</p>
+</section>
+
+<footer>
+    © 2026 Sneha Koli | Portfolio
+</footer>
+
+</body>
+</html>

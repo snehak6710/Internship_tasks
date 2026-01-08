@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Registration Form</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        background: linear-gradient(120deg, #4b2354, #c1a7c9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        width: 380px;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(12px);
+        border-radius: 10px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        color: #fff;
+        position: relative;
+    }
+
+    .card h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+        position: relative;
+    }
+
+    .input-group input,
+    .input-group select {
+        width: 100%;
+        padding: 10px;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(255,255,255,0.7);
+        color: #fff;
+        outline: none;
+    }
+
+    .input-group input::placeholder {
+        color: rgba(255,255,255,0.7);
+    }
+
+    .gender {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+        font-size: 14px;
+    }
+
+    .gender label {
+        cursor: pointer;
+    }
+
+    .show-password {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        font-size: 12px;
+        color: #eee;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(90deg, #c1a7c9, #4b2354);
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 15px;
+    }
+
+    button:hover {
+        opacity: 0.9;
+    }
+
+    .popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background: rgba(0,0,0,0.6);
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .popup-content {
+        background: #fff;
+        padding: 25px;
+        border-radius: 8px;
+        text-align: center;
+        color: #333;
+        width: 300px;
+    }
+
+    .popup-content button {
+        margin-top: 15px;
+        background: #4b2354;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>REGISTER HERE</h2>
+
+    <div class="input-group">
+        <input type="text" placeholder="Full Name" required>
+    </div>
+
+    <div class="input-group">
+        <input type="text" placeholder="Address" required>
+    </div>
+
+    <div class="input-group">
+        <input type="email" placeholder="Email" required>
+    </div>
+
+    <div class="input-group">
+        <input type="tel" placeholder="Phone No." required>
+    </div>
+
+    <div class="input-group">
+        <div class="gender">
+            <label><input type="radio" name="gender"> Male</label>
+            <label><input type="radio" name="gender"> Female</label>
+            <label><input type="radio" name="gender"> Other</label>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <input type="password" id="password" placeholder="Password" required>
+        <span class="show-password" onclick="togglePassword()">Show</span>
+    </div>
+
+    <button onclick="showPopup()">Register</button>
+</div>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h3>Success</h3>
+        <p>Registration completed successfully!</p>
+        <button onclick="closePopup()">OK</button>
+    </div>
+</div>
+
+<script>
+    function togglePassword() {
+        const pass = document.getElementById("password");
+        if (pass.type === "password") {
+            pass.type = "text";
+        } else {
+            pass.type = "password";
+        }
+    }
+
+    function showPopup() {
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
